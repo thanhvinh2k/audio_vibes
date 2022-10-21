@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> {
       children: [
         //ellipse top left
         Positioned(
-          top: 100.h,
+          top: -100.h,
           left: -656.w,
           child: ClipOval(
             child: Container(
@@ -126,12 +126,6 @@ class PlayingBook extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: 151.h),
-        //title will be move to app bar
-        Text(
-          'AudioVibes',
-          style: TextStyle(fontSize: 52.sp, color: const Color(0xFF1F1F1F)),
-        ),
         SizedBox(height: 114.h),
         // playing book
         Row(

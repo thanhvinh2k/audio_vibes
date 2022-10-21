@@ -1,4 +1,4 @@
-import 'package:audio_vibes/bottomNavigationBar/audio_bottom_navigation_bar.dart';
+import 'package:audio_vibes/pages/menu_screen.dart';
 import 'package:audio_vibes/app/image_constants.dart';
 import 'package:audio_vibes/app/string_constants.dart';
 import 'package:flutter/cupertino.dart';
@@ -111,7 +111,7 @@ class AudioConnection extends StatelessWidget {
             margin: EdgeInsets.only(top: 212.h),
             child: OutlinedButton(
               onPressed: () {
-                Navigator.of(context).push(CupertinoPageRoute(builder: (_) => const AudioBottomNavigationBar()));
+                Navigator.of(context).push(CupertinoPageRoute(builder: (_) => const AudioMenuScreen()));
               },
               style: OutlinedButton.styleFrom(
                   side: const BorderSide(color: Colors.white, width: 2.0)),

@@ -5,4 +5,6 @@ class AudioString {
   static const connectAudible = 'Connect Audible';
   static const connectStory = 'Connect Story.io';
   static const notNow = 'Not now';
+  static const genresInfo = 'Mystery, Romance, FanFiction,\nFantasy';
+  static const sleepTimeInfo = '10:00 PM to 6:30 AM (Weekdays)';
 }

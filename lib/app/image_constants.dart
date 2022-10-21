@@ -20,4 +20,9 @@ class AudioImage {
   static const bookPlaying = '${baseImage}BookPlaying.png';
   static const searchBook = '${baseImage}IconSearch.png';
   static const playBook = '${baseImage}IconPlay.png';
+  static const showMenu = '${baseImage}IconMenuEnable.png';
+  static const hideMenu = '${baseImage}IconMenuDisable.png';
+  static const shoppingFloatButton = '${baseImage}IconShopping.png';
+  static const editFloatButton = '${baseImage}IconEdit.png';
+  static const avatar = '${baseImage}Avatar.png';
 }

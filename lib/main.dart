@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Audio Vibes',
       theme: ThemeData(
+        drawerTheme: const DrawerThemeData(scrimColor: Color(0x59FFFFFF)),
         scaffoldBackgroundColor: AudioColor.backgroundColor,
         textTheme: GoogleFonts.montserratTextTheme(),
         colorScheme: ColorScheme.fromSwatch(

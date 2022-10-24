@@ -25,4 +25,19 @@ class AudioImage {
   static const shoppingFloatButton = '${baseImage}IconShopping.png';
   static const editFloatButton = '${baseImage}IconEdit.png';
   static const avatar = '${baseImage}Avatar.png';
+  static const closeDrawer = '${baseImage}CloseDrawer.png';
+  static const back = '${baseImage}IconBack.png';
+  static const more = '${baseImage}IconMore.png';
+  static const buyBook = '${baseImage}IconBuyBook.png';
+  static const fullStar = '${baseImage}IconFullStar.png';
+  static const halfStar = '${baseImage}IconHalfStar.png';
+  static const emptyStar = '${baseImage}IconEmptyStar.png';
+  static const previous = '${baseImage}IconPrevious.png';
+  static const fastForward = '${baseImage}IconFastForward.png';
+  static const pause = '${baseImage}IconPause.png';
+  static const backgroundPlayingBook = '${baseImage}BackgroundPlayingBook.png';
+  static const dropdown = '${baseImage}IconDropdown.png';
+  static const favorite = '${baseImage}IconFavorite.png';
+  static const time = '${baseImage}IconTime.png';
+  static const volume = '${baseImage}IconVolume.png';
 }

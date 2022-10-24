@@ -1,4 +1,6 @@
 import 'package:audio_vibes/app/image_constants.dart';
+import 'package:audio_vibes/pages/playing_book_page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:percent_indicator/percent_indicator.dart';
@@ -109,7 +111,9 @@ class _HomePageState extends State<HomePage> {
             height: 202.w,
             child: IconButton(
               padding: EdgeInsets.zero,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(CupertinoPageRoute(builder: (_) => const PlayingBookPage()));
+              },
               icon: const Image(image: AssetImage(AudioImage.playBook)),
             ),
           ),

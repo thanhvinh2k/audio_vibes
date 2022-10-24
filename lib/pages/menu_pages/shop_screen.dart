@@ -1,4 +1,6 @@
 import 'package:audio_vibes/app/color_constants.dart';
+import 'package:audio_vibes/pages/book_pages/buy_book_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:audio_vibes/app/image_constants.dart';
@@ -14,15 +16,7 @@ class _ShopPageState extends State<ShopPage> {
   List<Widget> _listBookTrending() {
     var listBook = <Widget>[];
     for (int i = 0; i < 10; i++) {
-      listBook.add(Container(
-        width: 297.w,
-        height: 484.h,
-        margin: EdgeInsets.only(left: 90.w),
-        child: const Image(
-          image: AssetImage(AudioImage.bookItem2),
-          fit: BoxFit.fill,
-        ),
-      ));
+      listBook.add(_bookItem(AudioImage.bookItem2));
     }
     return listBook;
   }
@@ -30,15 +24,7 @@ class _ShopPageState extends State<ShopPage> {
   List<Widget> _wishListBook() {
     var listBook = <Widget>[];
     for (int i = 0; i < 10; i++) {
-      listBook.add(Container(
-        width: 297.w,
-        height: 484.h,
-        margin: EdgeInsets.only(left: 90.w),
-        child: const Image(
-          image: AssetImage(AudioImage.bookItem3),
-          fit: BoxFit.fill,
-        ),
-      ));
+      listBook.add(_bookItem(AudioImage.bookItem3));
     }
     return listBook;
   }
@@ -46,17 +32,26 @@ class _ShopPageState extends State<ShopPage> {
   List<Widget> _listTopFree() {
     var listBook = <Widget>[];
     for (int i = 0; i < 10; i++) {
-      listBook.add(Container(
-        width: 297.w,
-        height: 484.h,
-        margin: EdgeInsets.only(left: 90.w),
-        child: const Image(
-          image: AssetImage(AudioImage.bookItem4),
-          fit: BoxFit.fill,
-        ),
-      ));
+      listBook.add(_bookItem(AudioImage.bookItem4));
     }
     return listBook;
+  }
+
+  Widget _bookItem (String asset) {
+    return Container(
+      width: 297.w,
+      height: 484.h,
+      margin: EdgeInsets.only(left: 90.w),
+      child: IconButton(
+        padding: EdgeInsets.zero,
+        onPressed: () {
+          Navigator.of(context).push(CupertinoPageRoute(builder: (_) => BuyBook(image: asset)));
+        },
+        icon: Image(
+          image: AssetImage(asset),
+        ),
+      ),
+    );
   }
 
   @override

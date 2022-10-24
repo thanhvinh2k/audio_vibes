@@ -7,4 +7,7 @@ class AudioString {
   static const notNow = 'Not now';
   static const genresInfo = 'Mystery, Romance, FanFiction,\nFantasy';
   static const sleepTimeInfo = '10:00 PM to 6:30 AM (Weekdays)';
+  static const seller = 'Sold by Aurelic Enterprises.';
+  static const quote =
+      '\" Lorem ipsum dolor sit amet, consectetur\nadipiscing elit. Pulvinar mattis viverra\nvolutpat consequat, sollicitudin facilisi\nipsum amet, morbi. Nulla purus amet a sit.\nEnim peleentesque massa lectus. \"';
 }

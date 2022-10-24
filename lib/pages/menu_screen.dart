@@ -1,5 +1,6 @@
 import 'dart:ui' show ImageFilter;
 import 'package:audio_vibes/app/color_constants.dart';
+import 'package:audio_vibes/component/appbar_cpn.dart';
 import 'package:audio_vibes/pages/menu_pages/home_screen.dart';
 import 'package:audio_vibes/pages/menu_pages/profile_screen.dart';
 import 'package:audio_vibes/pages/menu_pages/shop_screen.dart';
@@ -55,38 +56,7 @@ class _AudioMenuScreenState extends State<AudioMenuScreen> {
         minTextAdapt: true,
         splitScreenMode: true);
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'AudioVibes',
-          style: TextStyle(fontSize: 52.sp, color: const Color(0xFF1F1F1F)),
-        ),
-        backgroundColor: AudioColor.backgroundColor,
-        elevation: 0.0,
-        leading: Builder(builder: (BuildContext context) {
-          return Container(
-            margin: EdgeInsets.only(left: 73.w),
-            child: IconButton(
-              padding: EdgeInsets.zero,
-              icon: const Image(image: AssetImage(AudioImage.showMenu)),
-              onPressed: () => Scaffold.of(context).openDrawer(),
-            ),
-          );
-        }),
-        leadingWidth: 141.57.w,
-        actions: _selectedIndex == 1
-            ? [
-                IconButton(
-                  padding: EdgeInsets.zero,
-                  onPressed: () {},
-                  icon: Container(
-                      width: 54.w,
-                      height: 54.w,
-                      child: const Image(
-                          image: AssetImage(AudioImage.searchBook))),
-                )
-              ]
-            : null,
-      ),
+      appBar: AppBarComponent(image: AudioImage.searchBook, onPress: () {},),
       body: buildPageView(),
       bottomNavigationBar: AudioBottomNavigationBarComponent(
         currentIndex: _selectedIndex,
@@ -101,7 +71,7 @@ class _AudioMenuScreenState extends State<AudioMenuScreen> {
             flex: 2,
             child: Drawer(
               child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 1.0, sigmaY: 1.0),
+                filter: ImageFilter.blur(sigmaX: 1.5, sigmaY: 1.5),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -114,7 +84,7 @@ class _AudioMenuScreenState extends State<AudioMenuScreen> {
                           onPressed: () {
                             Navigator.pop(context);
                           },
-                          icon: Image(image: AssetImage(AudioImage.hideMenu))),
+                          icon: const Image(image: AssetImage(AudioImage.hideMenu))),
                     ),
                     Container(
                       margin: EdgeInsets.only(left: 159.w),
@@ -171,8 +141,14 @@ class _AudioMenuScreenState extends State<AudioMenuScreen> {
                 child: Align(
                     alignment: Alignment.topRight,
                     child: IconButton(
-                      icon: Icon(Icons.cancel),
-                      onPressed: () {},
+                      icon: SizedBox(
+                        width: 50.w,
+                        height: 50.w,
+                        child: const Image(image: AssetImage(AudioImage.closeDrawer))
+                      ),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
                     )),
               ))
         ],

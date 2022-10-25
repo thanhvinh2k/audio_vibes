@@ -1,17 +1,18 @@
-
 import 'package:flutter/material.dart';
 import 'package:audio_vibes/app/color_constants.dart';
 import 'package:audio_vibes/app/image_constants.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class AppBarComponent extends StatelessWidget implements PreferredSize{
+class AppBarComponent extends StatelessWidget implements PreferredSize {
   final String image;
   final void Function() onPress;
-  const AppBarComponent({super.key, required this.image, required this.onPress});
+
+  const AppBarComponent(
+      {super.key, required this.image, required this.onPress});
 
   @override
   Widget build(BuildContext context) {
-    return AppBar (
+    return AppBar(
       title: Text(
         'AudioVibes',
         style: TextStyle(fontSize: 52.sp, color: const Color(0xFF1F1F1F)),
@@ -38,8 +39,7 @@ class AppBarComponent extends StatelessWidget implements PreferredSize{
             icon: SizedBox(
                 width: 54.w,
                 height: 54.w,
-                child: Image(
-                    image: AssetImage(image))),
+                child: Image(image: AssetImage(image))),
           ),
         )
       ],
@@ -47,7 +47,7 @@ class AppBarComponent extends StatelessWidget implements PreferredSize{
   }
 
   @override
-  Widget get child => Text('child');
+  Widget get child => const Text('child');
 
   @override
   Size get preferredSize => Size(100.w, 140.h);

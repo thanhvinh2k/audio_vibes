@@ -56,7 +56,10 @@ class _AudioMenuScreenState extends State<AudioMenuScreen> {
         minTextAdapt: true,
         splitScreenMode: true);
     return Scaffold(
-      appBar: AppBarComponent(image: AudioImage.searchBook, onPress: () {},),
+      appBar: AppBarComponent(
+        image: AudioImage.searchBook,
+        onPress: () {},
+      ),
       body: buildPageView(),
       bottomNavigationBar: AudioBottomNavigationBarComponent(
         currentIndex: _selectedIndex,
@@ -84,7 +87,8 @@ class _AudioMenuScreenState extends State<AudioMenuScreen> {
                           onPressed: () {
                             Navigator.pop(context);
                           },
-                          icon: const Image(image: AssetImage(AudioImage.hideMenu))),
+                          icon: const Image(
+                              image: AssetImage(AudioImage.hideMenu))),
                     ),
                     Container(
                       margin: EdgeInsets.only(left: 159.w),
@@ -142,10 +146,10 @@ class _AudioMenuScreenState extends State<AudioMenuScreen> {
                     alignment: Alignment.topRight,
                     child: IconButton(
                       icon: SizedBox(
-                        width: 50.w,
-                        height: 50.w,
-                        child: const Image(image: AssetImage(AudioImage.closeDrawer))
-                      ),
+                          width: 50.w,
+                          height: 50.w,
+                          child: const Image(
+                              image: AssetImage(AudioImage.closeDrawer))),
                       onPressed: () {
                         Navigator.pop(context);
                       },
@@ -248,24 +252,49 @@ class ButtonNavigation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-      IconButton(
+    return SizedBox(
+      height: 218.h,
+      width: 120.w,
+      child: IconButton(
         constraints: const BoxConstraints(),
         onPressed: onPress,
         padding: EdgeInsets.zero,
-        icon:
-            isSelected ? Image.asset(imageSelect) : Image.asset(imageNonSelect),
+        icon: isSelected
+            ? Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image(image: AssetImage(imageSelect), width: 80.w),
+            SizedBox(
+              height: 11.h,
+            ),
+            Text(
+              label,
+              style: TextStyle(
+                  color: isSelected
+                      ? AudioColor.primaryColor
+                      : const Color(0x40000000),
+                  fontSize: 36.sp),
+            )
+          ],
+        )
+            : Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image(image: AssetImage(imageNonSelect), width: 80.w),
+            SizedBox(
+              height: 11.h,
+            ),
+            Text(
+              label,
+              style: TextStyle(
+                  color: isSelected
+                      ? AudioColor.primaryColor
+                      : const Color(0x40000000),
+                  fontSize: 36.sp),
+            )
+          ],
+        ),
       ),
-      SizedBox(
-        height: 11.h,
-      ),
-      Text(
-        label,
-        style: TextStyle(
-            color:
-                isSelected ? AudioColor.primaryColor : const Color(0x40000000),
-            fontSize: 36.sp),
-      )
-    ]);
+    );
   }
 }

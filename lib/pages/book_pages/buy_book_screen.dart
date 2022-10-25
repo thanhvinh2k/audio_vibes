@@ -90,22 +90,24 @@ class BuyBook extends StatelessWidget {
                               padding: EdgeInsets.only(top: 21.h),
                               child: Text(
                                 AudioString.seller,
-                                style: TextStyle(color: Colors.black, fontSize: 42.sp),
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: 42.sp),
                               ),
                             ),
                           ],
                         ),
                         IconButton(
                           onPressed: () {},
-                          icon: const Image(image: AssetImage(AudioImage.buyBook)),
+                          icon: const Image(
+                              image: AssetImage(AudioImage.buyBook)),
                           padding: EdgeInsets.zero,
                           iconSize: 164.w,
                         )
                       ],
                     ),
                     Padding(
-                      padding:
-                          EdgeInsets.only(left: 28.w, right: 25.w, bottom: 24.h, top: 105.h),
+                      padding: EdgeInsets.only(
+                          left: 28.w, right: 25.w, bottom: 24.h, top: 105.h),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -147,19 +149,24 @@ class BuyBook extends StatelessWidget {
                       alignment: Alignment.centerRight,
                       child: Padding(
                         padding: EdgeInsets.only(right: 60.w, top: 60.h),
-                        child: Text('- The Times', style: TextStyle(fontSize: 42.sp, color: Colors.black)),
+                        child: Text('- The Times',
+                            style: TextStyle(
+                                fontSize: 42.sp, color: Colors.black)),
                       ),
                     )
                   ],
                 ),
               ),
-              Image(image: const AssetImage(AudioImage.more), width: 40.w, height: 50.h)
+              Image(
+                  image: const AssetImage(AudioImage.more),
+                  width: 40.w,
+                  height: 50.h)
             ],
-        )
+          )
         ],
       ),
       drawerScrimColor: Colors.transparent,
-      drawer: DrawerComponent(),
+      drawer: const DrawerComponent(),
     );
   }
 }

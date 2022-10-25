@@ -20,15 +20,10 @@ class DrawerComponent extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    margin: EdgeInsets.only(
-                        top: 155.h, bottom: 305.h, left: 73.w),
+                    margin:
+                        EdgeInsets.only(top: 155.h, bottom: 305.h, left: 73.w),
                     width: 68.57.w,
-                    child: IconButton(
-                        padding: EdgeInsets.zero,
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        icon: const Image(image: AssetImage(AudioImage.hideMenu))),
+                    child: const Image(image: AssetImage(AudioImage.hideMenu)),
                   ),
                   Container(
                     margin: EdgeInsets.only(left: 159.w),
@@ -88,8 +83,8 @@ class DrawerComponent extends StatelessWidget {
                     icon: SizedBox(
                         width: 50.w,
                         height: 50.w,
-                        child: const Image(image: AssetImage(AudioImage.closeDrawer))
-                    ),
+                        child: const Image(
+                            image: AssetImage(AudioImage.closeDrawer))),
                     onPressed: () {
                       Navigator.pop(context);
                     },
